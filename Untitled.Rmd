@@ -83,3 +83,11 @@ tib1 <- tibble(x = 1:1000, y = rnorm(1000), z = rep("aa, bb., 500"))
 tib1
 View(tib1)
 ```
+
+# Help
+
+Se nede i høyre hjørne
+
+```{r}
+
+```
