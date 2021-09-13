@@ -1,0 +1,85 @@
+---
+title: "R Introduction"
+output: html_notebook
+---
+
+```{r}
+2+2
+x <- 2+2
+x
+(y <- 3+3)
+(z=4)
+rm(z)
+x+y
+x^y
+x*y
+x-y
+x/y
+```
+
+# Combine
+
+```{r}
+x <- c(2, 7, 9, 13)
+y <- c(6, 2)
+z <- x+y
+z
+y <- c(y, 3)
+y
+(z <- x+y)
+```
+
+# Typer av vektorer
+
+```{r}
+class(x)
+typeof(x)
+x <- 2L
+typeof(x)
+x <- 2.
+typeof(x)
+x <- 2L
+y <- 4.1
+typeof(x)
+typeof(y)
+z <- c(x, y)
+typeof(z)
+z <- c(x, y, "s")
+typeof(z)
+z[1]
+z[2]
+x
+y
+t <- x + y
+t
+typeof(t)
+z[1] + z[2]
+```
+
+R jobber med vektorer. Alle element må være av samme type. R konverterer automatisk til mer generell type.
+
+```{r}
+l <- list(x = 1:4, y = c(TRUE, FALSE, FALSE), z = c("aa, ba"), zz = c(2.1, 4.33))
+str(l)
+```
+
+```{r}
+l[1]
+l[2]
+l[[2]]
+```
+
+# Dataframes
+
+Dataframes har en nær slektning i Tidyverse som heter tibble.
+
+En tibble / dataframes er en list av vektorer med samme lengde
+
+```{r}
+df1 <- data.frame(x = 1:1000, y = rnorm(1000))
+df1_as_tib <- tibble(df1)
+# prefer tibble
+tib1 <- tibble(x = 1:1000, y = rnorm(1000), z = rep("aa, bb., 500"))
+tib1
+View(tib1)
+```
